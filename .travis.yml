@@ -11,11 +11,11 @@ script​:
     - docker push $docker_login/travis-database:1.0
     - docker push $docker_login/travis-httpd:1.0            
     - docker push $docker_login/travis-api           
-    cache​ :
-    ​ directories​ :
-    - $HOME/.m2
-    services​ :
+cache​ :
+    directories​ :
+        - $HOME/.m2
+services​ :
     - docker
-    branches:
-        only:
-        - develop
+on:
+    branch:develop
+         
