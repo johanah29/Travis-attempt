@@ -1,7 +1,6 @@
 language​: java
 script​:
-    - mvn clean verify --file ./simple-api   
-    - ​mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=johanah29_Travis-attempt
+    - ​mvn clean verify --file ./simple-api org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=johanah29_Travis-attempt
     ​ # Connexion à Docker
     - docker login -u $docker_login -p $docker_password
     ​ # Build
@@ -20,8 +19,8 @@ services​ :
 on:
     branch:develop
     
-addons​ :
-​ sonarcloud​ :
-​   organization​ : ​ "johanah29"
-​       token​ : ​ "$SONARCLOUD_TOKEN"
+addons​:
+​   sonarcloud​:
+​       organization​: "johanah29"
+​           token​: "$SONARCLOUD_TOKEN"
          
